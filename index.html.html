@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Bosses Barbería</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Big Bosses Barbería en Paraná, Entre Ríos. Reservá tu turno online con Tomy o Marce. Especialistas en fades, cortes modernos y barba clásica.">
+  <meta name="keywords" content="barbería Paraná, corte de cabello Paraná, fade Paraná, barba Paraná, Big Bosses barbería, turno barbería online">
+  <meta name="author" content="Big Bosses Barbería">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bigbossesbarberia.netlify.app/">
+
+  <!-- Open Graph (Facebook / WhatsApp preview) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Big Bosses Barbería — Paraná">
+  <meta property="og:description" content="Reservá tu turno online. Fades, cortes modernos y barba clásica en Paraná, Entre Ríos.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1200&q=80">
+  <meta property="og:url" content="https://bigbossesbarberia.netlify.app/">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Big Bosses Barbería — Paraná">
+  <meta name="twitter:description" content="Reservá tu turno online. Fades, cortes modernos y barba clásica.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1200&q=80">
+
+  <!-- Schema.org LocalBusiness (Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Big Bosses Barbería",
+    "description": "Barbería premium en Paraná. Especialistas en fades, cortes modernos y barba clásica.",
+    "url": "https://bigbossesbarberia.netlify.app/",
+    "telephone": "+543874890666",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Paraná",
+      "addressRegion": "Entre Ríos",
+      "addressCountry": "AR"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00" }
+    ],
+    "priceRange": "$$",
+    "image": "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1200&q=80"
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dark: #8a6820;
+    --black: #080808;
+    --dark: #111111;
+    --card: #161616;
+    --border: rgba(201,168,76,0.25);
+    --text: #e8e0d0;
+    --muted: #7a7060;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--black);
+    color: var(--text);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    width: 12px; height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: all 0.15s ease;
+    opacity: 0.6;
+  }
+  body:hover .cursor { opacity: 1; }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 1; opacity: 0.35;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 80% at 80% 80%, rgba(201,168,76,0.04) 0%, transparent 60%),
+      var(--black);
+  }
+
+  .hero-lines {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  .hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.5em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.3s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-weight: 900;
+    line-height: 0.9;
+    color: white;
+    margin-bottom: 0.2em;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.5s forwards;
+  }
+
+  .hero-title span {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--gold-light);
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.4em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.7s forwards;
+  }
+
+  .hero-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 3rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.9s forwards;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.1s forwards;
+  }
+
+  .hero-cta::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: var(--gold);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.7,0,0.3,1);
+    z-index: -1;
+  }
+
+  .hero-cta:hover { color: var(--black); }
+  .hero-cta:hover::before { transform: translateX(0); }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.4s forwards;
+  }
+
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* SECTION BASE */
+  section {
+    padding: 8rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 30px; height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  /* BARBERS */
+  .barbers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 4rem;
+  }
+
+  @media (max-width: 600px) { .barbers-grid { grid-template-columns: 1fr; } }
+
+  .barber-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    background: var(--card);
+  }
+
+  .barber-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: grayscale(40%) contrast(1.1);
+    transition: transform 0.8s cubic-bezier(0.4,0,0.2,1), filter 0.6s;
+  }
+
+  .barber-card:hover img {
+    transform: scale(1.06);
+    filter: grayscale(0%) contrast(1.1);
+  }
+
+  .barber-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 50%);
+    padding: 2.5rem;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+
+  .barber-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+  }
+
+  .barber-role {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+
+  .barber-select-btn {
+    margin-top: 1.2rem;
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: fit-content;
+    transition: background 0.3s, color 0.3s;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.4s;
+  }
+
+  .barber-card:hover .barber-select-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .barber-select-btn:hover {
+    background: var(--gold);
+    color: var(--black);
+  }
+
+  .barber-select-btn.selected {
+    background: var(--gold);
+    color: var(--black);
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* SERVICES */
+  .services-section { background: var(--dark); max-width: 100%; padding: 8rem 2rem; }
+  .services-inner { max-width: 1100px; margin: 0 auto; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 4rem;
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 700px) { .services-grid { grid-template-columns: 1fr; } }
+
+  .service-item {
+    padding: 2.5rem;
+    position: relative;
+    background: var(--dark);
+    transition: background 0.4s;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .service-item::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: scaleX(0);
+    transition: transform 0.5s;
+  }
+
+  .service-item:hover { background: rgba(201,168,76,0.04); }
+  .service-item:hover::before { transform: scaleX(1); }
+
+  .service-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    color: var(--gold-dark);
+    letter-spacing: 0.2em;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-price {
+    font-size: 1.6rem;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  /* HOURS */
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .hour-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hour-day { color: var(--muted); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.3em; }
+  .hour-time { color: var(--gold); }
+  .closed { color: var(--muted); font-style: italic; }
+
+  /* BOOKING */
+  .booking-section {
+    background: var(--black);
+    max-width: 100%;
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .booking-section::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .booking-inner { max-width: 700px; margin: 0 auto; }
+
+  .booking-form {
+    margin-top: 4rem;
+    display: grid;
+    gap: 1px;
+    border: 1px solid var(--border);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+  }
+
+  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+  .form-field {
+    background: var(--card);
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .form-field label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+  }
+
+  .form-field input,
+  .form-field select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    outline: none;
+    cursor: text;
+    -webkit-appearance: none;
+    transition: border-color 0.3s;
+  }
+
+  .form-field select option { background: var(--card); color: var(--text); }
+
+  .form-field input:focus,
+  .form-field select:focus {
+    border-bottom-color: var(--gold);
+  }
+
+  .form-field input::placeholder { color: var(--muted); font-size: 0.85rem; }
+
+  .form-submit {
+    padding: 2rem 1.5rem;
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-confirm {
+    padding: 1rem 3rem;
+    background: var(--gold);
+    border: none;
+    color: var(--black);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .btn-confirm:hover { background: var(--gold-light); }
+
+  .btn-confirm::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.2);
+    transform: translateX(-100%) skewX(-20deg);
+    transition: transform 0.4s;
+  }
+
+  .btn-confirm:hover::after { transform: translateX(150%) skewX(-20deg); }
+
+  .selected-barbero-display {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+  }
+
+  .selected-barbero-display span { color: var(--gold); }
+
+  /* CONFIRMATION */
+  .confirm-toast {
+    position: fixed;
+    bottom: 2rem; left: 50%;
+    transform: translateX(-50%) translateY(200%);
+    background: var(--card);
+    border: 1px solid var(--gold);
+    padding: 1.5rem 2.5rem;
+    z-index: 500;
+    text-align: center;
+    transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    min-width: 300px;
+  }
+
+  .confirm-toast.show { transform: translateX(-50%) translateY(0); }
+  .confirm-toast h3 { font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 0.5rem; }
+  .confirm-toast p { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; }
+
+  /* BARBER SELECTION STATE */
+  .barber-card.active .barber-select-btn {
+    background: var(--gold); color: var(--black);
+    opacity: 1; transform: translateY(0);
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 200;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-burger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+  }
+  .nav-burger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--gold);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 600px) {
+    .nav-links {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(8,8,8,0.97);
+      backdrop-filter: blur(12px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      z-index: 199;
+    }
+    .nav-links.mobile-open { display: flex; }
+    .nav-links a { font-size: 1rem; }
+    .nav-burger { display: flex; }
+  }
+
+  /* FADE ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s, transform 0.8s;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Striped accent */
+  .accent-stripe {
+    width: 100%;
+    height: 3px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--gold) 0px, var(--gold) 8px,
+      transparent 8px, transparent 16px
+    );
+    margin-bottom: 0.5rem;
+    opacity: 0.4;
+  }
+</style>
+
+<style>
+/* ── Rating Modal ───────────────────────────────────── */
+#rating-modal {
+  position: fixed; inset: 0; z-index: 9000;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none; opacity: 0;
+  transition: opacity 0.4s;
+}
+#rating-modal.open { pointer-events: all; opacity: 1; }
+
+#rating-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+}
+
+#rating-card {
+  position: relative; z-index: 9001;
+  background: #111;
+  border: 1px solid rgba(201,168,76,0.35);
+  padding: 3rem 2.5rem 2rem;
+  width: min(460px, 92vw);
+  text-align: center;
+  transform: translateY(30px) scale(0.96);
+  transition: transform 0.45s cubic-bezier(0.34,1.4,0.64,1);
+  box-shadow: 0 0 80px rgba(201,168,76,0.08);
+}
+#rating-modal.open #rating-card {
+  transform: translateY(0) scale(1);
+}
+
+#rating-icon {
+  font-size: 2rem; color: var(--gold);
+  margin-bottom: 1rem;
+  animation: spinIn 0.6s ease forwards;
+}
+@keyframes spinIn {
+  from { transform: rotate(-180deg) scale(0); opacity:0; }
+  to   { transform: rotate(0deg) scale(1);   opacity:1; }
+}
+
+#rating-eyebrow {
+  font-size: 0.65rem; letter-spacing: 0.5em;
+  text-transform: uppercase; color: var(--gold-dark);
+  margin-bottom: 0.8rem;
+}
+
+#rating-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem; color: white; font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+#rating-sub {
+  font-size: 0.75rem; color: var(--muted);
+  letter-spacing: 0.08em; margin-bottom: 1.2rem;
+}
+
+#rating-barbero-badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--border);
+  font-size: 0.7rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 1.8rem;
+}
+
+#stars-row {
+  display: flex; justify-content: center; gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  position: relative; z-index: 9002;
+  pointer-events: auto !important;
+}
+
+.star {
+  font-size: 2.4rem;
+  color: #333;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  transition: color 0.15s, transform 0.15s;
+  line-height: 1;
+  user-select: none;
+  position: relative;
+  z-index: 9002;
+}
+.star.hovered { color: var(--gold-light); transform: scale(1.25); }
+.star.selected { color: var(--gold); }
+.star.pop {
+  animation: starPop 0.3s cubic-bezier(0.34,1.7,0.64,1) forwards;
+}
+@keyframes starPop {
+  0%   { transform: scale(1.25); }
+  60%  { transform: scale(1.45); }
+  100% { transform: scale(1.1); }
+}
+
+#rating-label-text {
+  font-size: 0.72rem; letter-spacing: 0.25em;
+  color: var(--muted); text-transform: uppercase;
+  min-height: 1.2em; margin-bottom: 1.5rem;
+  transition: color 0.3s;
+}
+
+#rating-comment {
+  width: 100%; background: #1a1a1a;
+  border: 1px solid var(--border);
+  border-radius: 0; color: var(--text);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.82rem; padding: 0.9rem 1rem;
+  resize: none; height: 80px; outline: none;
+  margin-bottom: 1.2rem; cursor: text !important;
+  pointer-events: auto !important; position: relative; z-index: 9002;
+  transition: border-color 0.3s;
+}
+#rating-comment:focus { border-color: var(--gold); }
+#rating-comment::placeholder { color: var(--muted); }
+
+#rating-submit {
+  width: 100%; padding: 1rem;
+  background: var(--gold); border: none;
+  color: var(--black);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  cursor: pointer !important; margin-bottom: 0.8rem;
+  pointer-events: auto !important; position: relative; z-index: 9002;
+  transition: background 0.3s, opacity 0.3s;
+}
+#rating-submit:disabled { opacity: 0.3; cursor: not-allowed; }
+#rating-submit:not(:disabled):hover { background: var(--gold-light); }
+
+#rating-skip {
+  background: transparent; border: none;
+  font-size: 0.68rem; letter-spacing: 0.25em;
+  color: var(--muted); text-transform: uppercase;
+  cursor: pointer !important; transition: color 0.3s;
+  pointer-events: auto !important; position: relative; z-index: 9002;
+}
+#rating-skip:hover { color: var(--text); }
+
+/* Thanks state */
+#rating-thanks { padding: 1rem 0; }
+#thanks-stars { font-size: 1.8rem; letter-spacing: 0.2rem; color: var(--gold); margin-bottom: 1rem; }
+#thanks-msg {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; color: white; font-style: italic; margin-bottom: 0.5rem;
+}
+#thanks-sub { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; }
+
+/* ── Reviews ticker bar ─────────────────────────────── */
+#reviews-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  height: 42px; background: #0d0d0d;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  overflow: hidden; z-index: 400;
+  display: flex; align-items: center;
+}
+#reviews-track {
+  display: flex; gap: 4rem; align-items: center;
+  white-space: nowrap;
+  animation: tickerScroll 30s linear infinite;
+}
+#reviews-track.paused { animation-play-state: paused; }
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.review-chip {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.68rem; letter-spacing: 0.1em; color: var(--muted);
+  flex-shrink: 0;
+}
+.review-chip .rc-stars { color: var(--gold); font-size: 0.7rem; }
+.review-chip .rc-name  { color: var(--text); }
+.review-chip .rc-sep   { color: var(--border); }
+</style>
+
+<style>
+/* ── Calendar ──────────────────────────────────────── */
+.cal-section { background: var(--black); max-width: 100%; padding: 6rem 2rem 2rem; }
+.cal-inner { max-width: 780px; margin: 0 auto; }
+
+#calendar {
+  margin-top: 3rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.cal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cal-nav {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--gold); font-size: 1.1rem;
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  cursor: pointer; transition: background 0.2s;
+}
+.cal-nav:hover { background: rgba(201,168,76,0.1); }
+.cal-nav:disabled { opacity: 0.25; pointer-events: none; }
+
+.cal-month-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; color: white; font-style: italic;
+}
+
+.cal-grid {
+  display: grid; grid-template-columns: repeat(7,1fr);
+}
+
+.cal-dow {
+  padding: 0.8rem 0; text-align: center;
+  font-size: 0.62rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.82rem; color: var(--muted);
+  border-right: 1px solid rgba(201,168,76,0.07);
+  border-bottom: 1px solid rgba(201,168,76,0.07);
+  cursor: default; position: relative;
+  transition: background 0.2s, color 0.2s;
+  user-select: none;
+}
+
+.cal-day.available {
+  color: var(--text); cursor: pointer;
+}
+.cal-day.available:hover {
+  background: rgba(201,168,76,0.08);
+  color: var(--gold);
+}
+.cal-day.selected {
+  background: var(--gold) !important;
+  color: var(--black) !important;
+  font-weight: 700;
+}
+.cal-day.today { border: 1px solid rgba(201,168,76,0.4); }
+.cal-day.past  { opacity: 0.25; }
+.cal-day.sunday { color: rgba(201,168,76,0.25); }
+.cal-day.has-bookings::after {
+  content: '';
+  position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--gold); opacity: 0.6;
+}
+
+/* Time slots */
+#time-slots-wrap {
+  margin-top: 1.5rem;
+  opacity: 0; pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+#time-slots-wrap.visible {
+  opacity: 1; pointer-events: auto; transform: translateY(0);
+}
+
+#time-slots-header {
+  font-size: 0.7rem; letter-spacing: 0.4em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+#time-slots-grid {
+  display: flex; flex-wrap: wrap; gap: 0.6rem;
+}
+
+.time-slot {
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--border);
+  font-size: 0.75rem; letter-spacing: 0.15em;
+  color: var(--text); cursor: pointer;
+  transition: all 0.2s; background: var(--card);
+  font-family: 'Josefin Sans', sans-serif;
+}
+.time-slot:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.05); }
+.time-slot.slot-selected { background: var(--gold); color: var(--black); border-color: var(--gold); font-weight: 700; }
+.time-slot.slot-taken { opacity: 0.25; pointer-events: none; text-decoration: line-through; }
+
+#cal-confirm-strip {
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+#cal-confirm-strip.visible { opacity: 1; pointer-events: auto; }
+
+#cal-selection-label {
+  font-size: 0.78rem; letter-spacing: 0.1em; color: var(--text);
+}
+#cal-selection-label span { color: var(--gold); }
+
+#cal-book-btn {
+  padding: 0.7rem 2rem;
+  background: var(--gold); border: none;
+  color: var(--black);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.3s;
+}
+#cal-book-btn:hover { background: var(--gold-light); }
+</style>
+
+<style>
+#wa-notice {
+  display: flex; align-items: center; gap: 0.7rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(37,211,102,0.07);
+  border: 1px solid rgba(37,211,102,0.25);
+  color: #25d366;
+  font-size: 0.75rem; letter-spacing: 0.08em;
+  margin-bottom: 2rem;
+  width: fit-content;
+}
+#wa-icon { display: flex; align-items: center; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <div class="nav-logo">BB</div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#barberos">Barberos</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#reservar">Reservar</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">💈 Paraná, Entre Ríos — Est. 2024</p>
+    <h1 class="hero-title">
+      Big
+      <span>Bosses</span>
+    </h1>
+    <p class="hero-subtitle">Barbería de autor · Tradición & Estilo</p>
+    <div class="hero-divider"></div>
+    <a href="#reservar" class="hero-cta">Reservar mi turno</a>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    scroll
+  </div>
+</div>
+
+<!-- BARBERS -->
+<section id="barberos" style="padding-bottom:0; max-width:100%;">
+  <div style="max-width:1100px; margin:0 auto; padding:0 2rem;" class="fade-in">
+    <div class="section-label">El equipo</div>
+    <h2 class="section-title">Nuestros barberos</h2>
+    <p style="font-size:0.85rem; color:var(--muted); letter-spacing:0.05em; line-height:1.8; max-width:500px;">
+      Dos especialistas, un solo estándar: la excelencia. Seleccioná tu barbero favorito para tu próximo turno.
+    </p>
+  </div>
+  <div class="barbers-grid" style="max-width:1100px; margin:4rem auto 0;">
+    <div class="barber-card fade-in" id="card-Tomy">
+      <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&q=80" alt="Tomy">
+      <div class="barber-overlay">
+        <div class="barber-name">Tomy</div>
+        <div class="barber-role">Especialista en Fades & Cortes Modernos</div>
+        <button class="barber-select-btn" onclick="elegirBarbero('Tomy', this)">Elegir a Tomy</button>
+      </div>
+    </div>
+    <div class="barber-card fade-in" id="card-Marce">
+      <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&q=80" alt="Marce">
+      <div class="barber-overlay">
+        <div class="barber-name">Marce</div>
+        <div class="barber-role">Especialista en Barba & Estilo Clásico</div>
+        <button class="barber-select-btn" onclick="elegirBarbero('Marce', this)">Elegir a Marce</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<div class="services-section">
+  <div class="services-inner">
+    <div class="fade-in">
+      <div class="section-label">Lo que hacemos</div>
+      <h2 class="section-title" id="servicios">Servicios & Precios</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-item fade-in">
+        <div class="service-number">01</div>
+        <div class="service-name">Corte Clásico</div>
+        <div class="service-desc">Corte de cabello a tijera o máquina. Perfección en cada detalle.</div>
+        <div class="service-price">$15.000</div>
+      </div>
+      <div class="service-item fade-in">
+        <div class="service-number">02</div>
+        <div class="service-name">Corte + Barba</div>
+        <div class="service-desc">La combinación perfecta. Corte completo más arreglo de barba.</div>
+        <div class="service-price">$15.000</div>
+      </div>
+      <div class="service-item fade-in">
+        <div class="service-number">03</div>
+        <div class="service-name">Barba</div>
+        <div class="service-desc">Arreglo, perfilado y acabado de barba con navaja y aceite.</div>
+        <div class="service-price">$6.000</div>
+      </div>
+    </div>
+
+    <!-- Hours -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:6rem;" class="fade-in">
+      <div>
+        <div class="section-label">Cuando estamos</div>
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.8rem; color:white; margin-bottom:1.5rem;">Horarios</h3>
+        <div class="hour-row"><span class="hour-day">Lunes — Viernes</span><span class="hour-time">08:00 – 21:00</span></div>
+        <div class="hour-row"><span class="hour-day">Sábados</span><span class="hour-time">08:00 – 13:00</span></div>
+        <div class="hour-row"><span class="hour-day">Domingos</span><span class="closed">Cerrado</span></div>
+      </div>
+      <div>
+        <div class="section-label">Dónde estamos</div>
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.8rem; color:white; margin-bottom:1.5rem;">Ubicación</h3>
+        <p style="font-size:0.85rem; color:var(--muted); line-height:2; letter-spacing:0.05em;">
+          Paraná, Entre Ríos<br>
+          Argentina<br><br>
+          <span style="color:var(--gold);">💈</span> Turnos solo con reserva previa
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Calendar section -->
+<div class="cal-section" id="reservar">
+  <div class="cal-inner fade-in">
+    <div class="section-label">Reservá tu turno</div>
+    <h2 class="section-title">Calendario de turnos</h2>
+    <p style="font-size:0.8rem;color:var(--muted);letter-spacing:0.05em;line-height:1.8;margin-bottom:1.5rem;">
+      Elegí barbero, servicio, día y horario. En segundos tenés tu turno confirmado.
+    </p>
+    <div id="wa-notice">
+      <span id="wa-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </span>
+      <span>Al confirmar, le llega un mensaje de WhatsApp automático a tu barbero</span>
+    </div>
+
+    <!-- Step 1: personal data + barbero + service -->
+    <div id="cal-step1" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid var(--border);margin-bottom:2rem;">
+      <div class="form-field">
+        <label>Tu nombre</label>
+        <input type="text" id="cal-nombre" placeholder="Nombre completo">
+      </div>
+      <div class="form-field">
+        <label>Teléfono</label>
+        <input type="tel" id="cal-tel" placeholder="+54 343 ...">
+      </div>
+      <div class="form-field">
+        <label>Barbero</label>
+        <select id="cal-barbero" onchange="calBarberoChange(this.value)">
+          <option value="">Seleccionar</option>
+          <option value="Tomy">Tomy — Fades & Modernos</option>
+          <option value="Marce">Marce — Barba & Clásico</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Servicio</label>
+        <select id="cal-servicio">
+          <option value="">Seleccionar</option>
+          <option value="Corte clásico — $15.000">Corte clásico — $15.000</option>
+          <option value="Corte + barba — $15.000">Corte + barba — $15.000</option>
+          <option value="Barba — $6.000">Solo barba — $6.000</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="calendar">
+      <div class="cal-header">
+        <button class="cal-nav" id="cal-prev">&#8592;</button>
+        <div class="cal-month-label" id="cal-month-label">—</div>
+        <button class="cal-nav" id="cal-next">&#8594;</button>
+      </div>
+      <div class="cal-grid" id="cal-grid"></div>
+    </div>
+
+    <div id="time-slots-wrap">
+      <div id="time-slots-header">Horarios disponibles — <span id="slots-date-label" style="color:white;font-style:italic;font-family:'Playfair Display',serif;"></span></div>
+      <div id="time-slots-grid"></div>
+    </div>
+
+    <div id="cal-confirm-strip">
+      <div id="cal-selection-label">
+        📅 <span id="cal-sel-date">—</span> &nbsp;·&nbsp; 🕐 <span id="cal-sel-time">—</span> &nbsp;·&nbsp; ✂ <span id="cal-sel-barbero">Sin barbero</span>
+      </div>
+      <button id="cal-book-btn" onclick="calConfirm()">Confirmar este turno →</button>
+    </div>
+
+  </div>
+</div>
+<!-- Footer -->
+<footer style="text-align:center; padding:3rem 2rem; border-top:1px solid var(--border);">
+  <div style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold); font-style:italic; margin-bottom:0.5rem;">Big Bosses</div>
+  <div style="font-size:0.7rem; letter-spacing:0.3em; color:var(--muted); text-transform:uppercase;">Barbería Premium · Paraná, Entre Ríos</div>
+</footer>
+
+<!-- Scissors overlay -->
+<div id="scissors-overlay">
+  <div id="scissors-wipe"></div>
+  <div id="scissors-wrap">
+    <svg id="scissors-svg" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+      <g id="blade-top">
+        <circle cx="12" cy="12" r="8" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+        <circle cx="12" cy="12" r="3" fill="#c9a84c"/>
+        <line x1="18" y1="17" x2="100" y2="30" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="18" y1="7"  x2="100" y2="30" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      </g>
+      <g id="blade-bottom">
+        <circle cx="12" cy="48" r="8" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+        <circle cx="12" cy="48" r="3" fill="#c9a84c"/>
+        <line x1="18" y1="43" x2="100" y2="30" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="18" y1="53" x2="100" y2="30" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      </g>
+      <circle cx="100" cy="30" r="3.5" fill="#c9a84c"/>
+    </svg>
+    <div id="scissors-label">Reservando tu turno</div>
+  </div>
+</div>
+
+<style>
+  #scissors-overlay {
+    position: fixed; inset: 0;
+    z-index: 800;
+    pointer-events: none;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  #scissors-wipe {
+    position: absolute; inset: 0;
+    background: #080808;
+    transform: scaleX(0);
+    transform-origin: left center;
+    will-change: transform;
+  }
+  #scissors-wrap {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; align-items: center; gap: 1.8rem;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #scissors-svg {
+    width: 180px;
+    filter: drop-shadow(0 0 24px rgba(201,168,76,0.8));
+  }
+  #scissors-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.55em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    font-weight: 600;
+  }
+  #blade-top    { transform-origin: 100px 30px; }
+  #blade-bottom { transform-origin: 100px 30px; }
+</style>
+
+<!-- Toast -->
+<div class="confirm-toast" id="toast">
+  <h3>✓ Turno confirmado</h3>
+  <p id="toast-msg">Tu reserva fue registrada exitosamente.</p>
+</div>
+
+<script>
+  // Mobile nav burger
+  (function() {
+    const burger = document.getElementById('nav-burger');
+    const links  = document.getElementById('nav-links');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      links.classList.toggle('mobile-open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        links.classList.remove('mobile-open');
+      });
+    });
+  })();
+
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx+'px'; cursor.style.top = my+'px'; });
+  (function lerp() {
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    ring.style.left = rx+'px'; ring.style.top = ry+'px';
+    requestAnimationFrame(lerp);
+  })();
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── State ──────────────────────────────────────────────────────────────
+  let barberoSeleccionado = '';
+
+  function elegirBarbero(nombre) {
+    barberoSeleccionado = nombre;
+    document.querySelectorAll('.barber-card').forEach(c => c.classList.remove('active'));
+    document.getElementById('card-' + nombre).classList.add('active');
+    document.querySelector('#card-Tomy .barber-select-btn').textContent  = nombre === 'Tomy'  ? '✓ Seleccionado' : 'Elegir a Tomy';
+    document.querySelector('#card-Marce .barber-select-btn').textContent = nombre === 'Marce' ? '✓ Seleccionado' : 'Elegir a Marce';
+    document.getElementById('cal-barbero').value = nombre;
+    calBarberoChange(nombre);
+    setTimeout(() => document.getElementById('reservar').scrollIntoView({ behavior:'smooth', block:'start' }), 300);
+  }
+
+  function runScissors(onDone) {
+    const overlay = document.getElementById('scissors-overlay');
+    const wipe    = document.getElementById('scissors-wipe');
+    const wrap    = document.getElementById('scissors-wrap');
+    const btop    = document.getElementById('blade-top');
+    const bbot    = document.getElementById('blade-bottom');
+
+    overlay.style.pointerEvents = 'all';
+
+    // Phase 1: dark wipe IN from left (300ms)
+    wipe.style.transformOrigin = 'left center';
+    wipe.style.transition = 'transform 0.32s cubic-bezier(0.7,0,0.3,1)';
+    wipe.style.transform  = 'scaleX(1)';
+
+    setTimeout(() => {
+      // Phase 2: show scissors + snip animation
+      wrap.style.transition = 'opacity 0.2s';
+      wrap.style.opacity = '1';
+
+      // snip 1
+      btop.style.transition = 'transform 0.15s ease-in-out';
+      bbot.style.transition = 'transform 0.15s ease-in-out';
+      btop.style.transform  = 'rotate(-22deg)';
+      bbot.style.transform  = 'rotate(22deg)';
+
+      setTimeout(() => {
+        btop.style.transform = 'rotate(0deg)';
+        bbot.style.transform = 'rotate(0deg)';
+      }, 150);
+
+      // snip 2 (echo)
+      setTimeout(() => {
+        btop.style.transform = 'rotate(-14deg)';
+        bbot.style.transform = 'rotate(14deg)';
+        setTimeout(() => {
+          btop.style.transform = 'rotate(0deg)';
+          bbot.style.transform = 'rotate(0deg)';
+        }, 120);
+      }, 320);
+
+    }, 340);
+
+    // Phase 3: wipe OUT to right (after snips)
+    setTimeout(() => {
+      wrap.style.opacity = '0';
+      wipe.style.transformOrigin = 'right center';
+      wipe.style.transition = 'transform 0.32s cubic-bezier(0.7,0,0.3,1)';
+      wipe.style.transform  = 'scaleX(0)';
+      overlay.style.pointerEvents = 'none';
+
+      // reset blade transforms for next time
+      btop.style.transition = '';
+      bbot.style.transition = '';
+      btop.style.transform  = '';
+      bbot.style.transform  = '';
+      wipe.style.transition = '';
+
+      if (onDone) onDone();
+    }, 820);
+  }
+
+  function showToast(title, msg) {
+    const t = document.getElementById('toast');
+    t.querySelector('h3').textContent = title;
+    document.getElementById('toast-msg').textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4500);
+  }
+
+  // ── Calendar ────────────────────────────────────────────────────────────
+  const MONTHS_ES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                     'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const DAYS_ES   = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+  const CAL_HOURS = ['08:00','09:00','10:00','11:00','12:00','13:00',
+                     '16:00','17:00','18:00','19:00','20:00','21:00'];
+
+  // calBookings: { 'YYYY-MM-DD': { Tomy:['09:00',...], Marce:[] } }
+  const calBookings = {};
+
+  let calYear, calMonth, calSelectedDate = null, calSelectedTime = null;
+
+  function calKey(y, m, d) {
+    return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+  }
+
+  function renderCalendar() {
+    const now = new Date();
+    const label = document.getElementById('cal-month-label');
+    label.textContent = MONTHS_ES[calMonth] + ' ' + calYear;
+
+    const grid = document.getElementById('cal-grid');
+    grid.innerHTML = '';
+
+    // Day-of-week headers
+    DAYS_ES.forEach(d => {
+      const el = document.createElement('div');
+      el.className = 'cal-dow'; el.textContent = d;
+      grid.appendChild(el);
+    });
+
+    const firstDay = new Date(calYear, calMonth, 1).getDay();
+    const daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
+    const today = new Date(); today.setHours(0,0,0,0);
+
+    // Empty cells before first day
+    for (let i = 0; i < firstDay; i++) {
+      const el = document.createElement('div'); el.className = 'cal-day';
+      grid.appendChild(el);
+    }
+
+    for (let d = 1; d <= daysInMonth; d++) {
+      const date = new Date(calYear, calMonth, d);
+      const key  = calKey(calYear, calMonth, d);
+      const el   = document.createElement('div');
+      el.className = 'cal-day';
+      el.textContent = d;
+
+      const isSunday = date.getDay() === 0;
+      const isPast   = date < today;
+
+      if (isSunday || isPast) {
+        el.classList.add(isSunday ? 'sunday' : 'past');
+      } else {
+        el.classList.add('available');
+        if (date.getTime() === today.getTime()) el.classList.add('today');
+        if (calBookings[key]) el.classList.add('has-bookings');
+        if (calSelectedDate === key) el.classList.add('selected');
+
+        el.addEventListener('click', () => selectCalDate(key, d));
+      }
+      grid.appendChild(el);
+    }
+  }
+
+  function selectCalDate(key, day) {
+    calSelectedDate = key;
+    calSelectedTime = null;
+    renderCalendar();
+    renderTimeSlots(key, day);
+    document.getElementById('cal-confirm-strip').classList.remove('visible');
+  }
+
+  function renderTimeSlots(key, day) {
+    const wrap  = document.getElementById('time-slots-wrap');
+    const grid  = document.getElementById('time-slots-grid');
+    const barbero = document.getElementById('cal-barbero').value || barberoSeleccionado;
+    const taken = calBookings[key] && barbero ? (calBookings[key][barbero] || []) : [];
+
+    // Format date label
+    const [y,m,d2] = key.split('-');
+    const dateObj = new Date(parseInt(y), parseInt(m)-1, parseInt(d2));
+    document.getElementById('slots-date-label').textContent =
+      DAYS_ES[dateObj.getDay()] + ' ' + day + ' de ' + MONTHS_ES[parseInt(m)-1];
+
+    grid.innerHTML = '';
+    CAL_HOURS.forEach(h => {
+      // Saturday: only morning
+      const isSat = dateObj.getDay() === 6;
+      if (isSat && parseInt(h) > 13) return;
+
+      const el = document.createElement('div');
+      el.className = 'time-slot';
+      el.textContent = h;
+      if (taken.includes(h)) {
+        el.classList.add('slot-taken');
+        el.title = 'Ocupado';
+      } else {
+        el.addEventListener('click', () => selectCalTime(h, el));
+      }
+      grid.appendChild(el);
+    });
+
+    wrap.classList.add('visible');
+    document.getElementById('cal-sel-date').textContent = document.getElementById('slots-date-label').textContent;
+  }
+
+  function selectCalTime(hora, el) {
+    calSelectedTime = hora;
+    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('slot-selected'));
+    el.classList.add('slot-selected');
+    const barbero = document.getElementById('cal-barbero').value || barberoSeleccionado || 'Sin barbero';
+    document.getElementById('cal-sel-time').textContent = hora;
+    document.getElementById('cal-sel-barbero').textContent = barbero;
+    document.getElementById('cal-confirm-strip').classList.add('visible');
+  }
+
+  function calConfirm() {
+    const btn = document.getElementById('cal-book-btn');
+    if (btn.disabled) return;
+
+    const nombre  = document.getElementById('cal-nombre').value.trim();
+    const barbero = document.getElementById('cal-barbero').value;
+    const servicio= document.getElementById('cal-servicio').value;
+
+    if (!nombre)          { calShake('cal-nombre');  return; }
+    if (nombre.length > 80) { calShake('cal-nombre'); return; }
+    if (!barbero)         { calShake('cal-barbero'); return; }
+    if (!servicio)        { calShake('cal-servicio');return; }
+    if (!calSelectedDate) { showToast('⚠ Falta fecha', 'Seleccioná un día en el calendario'); return; }
+    if (!calSelectedTime) { showToast('⚠ Falta horario', 'Elegí un horario disponible'); return; }
+
+    btn.disabled = true;
+
+    if (!calBookings[calSelectedDate]) calBookings[calSelectedDate] = { Tomy:[], Marce:[] };
+    calBookings[calSelectedDate][barbero].push(calSelectedTime);
+
+    // Sync hidden barbero for rating
+    barberoSeleccionado = barbero;
+
+    const [y,m,d] = calSelectedDate.split('-');
+    renderTimeSlots(calSelectedDate, parseInt(d));
+
+    const telCliente = document.getElementById('cal-tel').value.trim();
+    const fechaGuardada = calSelectedDate;
+    const horaGuardada  = calSelectedTime;
+
+    runScissors(() => {
+      showToast('✓ Turno confirmado', `${nombre} · ${barbero} · ${document.getElementById('cal-sel-date').textContent} · ${horaGuardada}`);
+      setTimeout(() => enviarWhatsApp(nombre, telCliente, barbero, servicio, fechaGuardada, horaGuardada), 400);
+      setTimeout(() => openRating(barbero), 1800);
+      btn.disabled = false;
+    });
+
+    document.getElementById('cal-confirm-strip').classList.remove('visible');
+    calSelectedTime = null;
+  }
+
+  function calShake(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.style.borderBottomColor = '#e05';
+    setTimeout(() => el.style.borderBottomColor = '', 800);
+  }
+
+  function calBarberoChange(val) {
+    barberoSeleccionado = val;
+    document.getElementById('cal-sel-barbero').textContent = val || 'Sin barbero';
+    // Re-render slots if date already selected
+    if (calSelectedDate) {
+      const [y,m,d] = calSelectedDate.split('-');
+      renderTimeSlots(calSelectedDate, parseInt(d));
+    }
+  }
+
+  // Init calendar at current month
+  function updateCalPrevBtn() {
+    const now = new Date();
+    document.getElementById('cal-prev').disabled =
+      (calYear === now.getFullYear() && calMonth === now.getMonth());
+  }
+
+  (function initCal() {
+    const now = new Date();
+    calYear  = now.getFullYear();
+    calMonth = now.getMonth();
+    renderCalendar();
+    updateCalPrevBtn();
+    document.getElementById('cal-prev').addEventListener('click', () => {
+      calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; }
+      calSelectedDate = null; calSelectedTime = null;
+      renderCalendar();
+      updateCalPrevBtn();
+      document.getElementById('time-slots-wrap').classList.remove('visible');
+      document.getElementById('cal-confirm-strip').classList.remove('visible');
+    });
+    document.getElementById('cal-next').addEventListener('click', () => {
+      calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; }
+      calSelectedDate = null; calSelectedTime = null;
+      renderCalendar();
+      updateCalPrevBtn();
+      document.getElementById('time-slots-wrap').classList.remove('visible');
+      document.getElementById('cal-confirm-strip').classList.remove('visible');
+    });
+  })();
+
+
+
+  // ── WhatsApp config ─────────────────────────────────────────────────────
+  // TODO: REEMPLAZAR CON NUMEROS REALES ANTES DE DEPLOY (formato internacional sin + ni espacios)
+  const WA_NUMEROS = {
+    Tomy:  '5493430000001',   // TODO: poner numero real de Tomy
+    Marce: '5493430000002'    // TODO: poner numero real de Marce
+  };
+
+  const MONTHS_ES_FULL = ['enero','febrero','marzo','abril','mayo','junio',
+                           'julio','agosto','septiembre','octubre','noviembre','diciembre'];
+
+  function enviarWhatsApp(nombre, tel, barbero, servicio, fecha, hora) {
+    const num = WA_NUMEROS[barbero];
+    if (!num) return;
+    const [y,m,d] = fecha.split('-');
+    const fechaLinda = `${parseInt(d)} de ${MONTHS_ES_FULL[parseInt(m)-1]} de ${y}`;
+    const msg = encodeURIComponent(
+      `✂️ *Nuevo turno — Big Bosses Barbería*
+
+` +
+      `👤 Cliente: ${nombre}
+` +
+      `📱 Teléfono: ${tel || 'No indicado'}
+` +
+      `💈 Barbero: ${barbero}
+` +
+      `✂️ Servicio: ${servicio}
+` +
+      `📅 Fecha: ${fechaLinda}
+` +
+      `🕐 Hora: ${hora}
+
+` +
+      `_Reserva realizada desde bigbosses.com_`
+    );
+    window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
+  }
+  // ── Rating system ──────────────────────────────────────────────────────
+  const STAR_LABELS = ['', 'Muy malo', 'Regular', 'Bueno', '¡Muy bueno!', '¡Excelente!'];
+  let currentRating = 0;
+  let pendingBarbero = '';
+
+  const reviews = [
+    { name: 'Maxi R.',    stars: 5, text: 'El mejor fade de la ciudad' },
+    { name: 'Lucas P.',   stars: 5, text: 'Marce es un genio con la barba' },
+    { name: 'Gonzalo T.', stars: 4, text: 'Muy buen ambiente y atención' },
+    { name: 'Sebastián M.',stars: 5, text: 'Tomy es un crack' },
+    { name: 'Nico V.',    stars: 5, text: 'Siempre salgo conforme' },
+    { name: 'Rodrigo A.', stars: 4, text: 'Excelente trabajo, muy recomendable' },
+  ];
+
+  function buildTicker(allReviews) {
+    const track = document.getElementById('reviews-track');
+    track.innerHTML = '';
+    [...allReviews, ...allReviews].forEach(r => {
+      const chip = document.createElement('div');
+      chip.className = 'review-chip';
+      const stars = document.createElement('span');
+      stars.className = 'rc-stars';
+      stars.textContent = '\u2605'.repeat(r.stars) + '\u2606'.repeat(5 - r.stars);
+      const name = document.createElement('span');
+      name.className = 'rc-name';
+      name.textContent = r.name;
+      const sep = document.createElement('span');
+      sep.className = 'rc-sep';
+      sep.textContent = '\u2014';
+      const text = document.createElement('span');
+      text.textContent = '"' + r.text + '"';
+      chip.append(stars, name, sep, text);
+      track.appendChild(chip);
+    });
+  }
+
+  buildTicker(reviews);
+
+  // Pause ticker on hover
+  document.getElementById('reviews-bar').addEventListener('mouseenter', () =>
+    document.getElementById('reviews-track').classList.add('paused'));
+  document.getElementById('reviews-bar').addEventListener('mouseleave', () =>
+    document.getElementById('reviews-track').classList.remove('paused'));
+
+  function openRating(barbero) {
+    pendingBarbero = barbero;
+    currentRating = 0;
+    document.querySelectorAll('.star').forEach(s => s.classList.remove('selected','hovered','pop'));
+    document.getElementById('rating-label-text').textContent = 'Seleccioná una puntuación';
+    document.getElementById('rating-comment').value = '';
+    document.getElementById('rating-submit').disabled = true;
+    document.getElementById('rating-barbero-badge').textContent = '✂ ' + barbero;
+    document.getElementById('rating-thanks').style.display = 'none';
+    document.getElementById('rating-submit').style.display = '';
+    document.getElementById('rating-skip').style.display = '';
+    document.getElementById('rating-comment').style.display = '';
+    document.getElementById('stars-row').style.display = '';
+    document.getElementById('rating-sub').textContent = 'Tu opinión nos ayuda a seguir mejorando';
+    document.getElementById('rating-modal').classList.add('open');
+    document.getElementById('cursor').style.display = 'none';
+    document.getElementById('cursorRing').style.display = 'none';
+  }
+
+  function closeRating() {
+    document.getElementById('rating-modal').classList.remove('open');
+    document.getElementById('cursor').style.display = '';
+    document.getElementById('cursorRing').style.display = '';
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && document.getElementById('rating-modal').classList.contains('open')) {
+      closeRating();
+    }
+  });
+
+  // Star hover & click
+  document.querySelectorAll('.star').forEach(star => {
+    const val = parseInt(star.dataset.v);
+
+    star.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        star.click();
+      }
+    });
+
+    star.addEventListener('mouseenter', () => {
+      document.querySelectorAll('.star').forEach(s => {
+        const sv = parseInt(s.dataset.v);
+        s.classList.toggle('hovered', sv <= val);
+        if (sv <= val) s.classList.remove('selected');
+      });
+      document.getElementById('rating-label-text').textContent = STAR_LABELS[val];
+    });
+
+    star.addEventListener('mouseleave', () => {
+      document.querySelectorAll('.star').forEach(s => {
+        s.classList.remove('hovered');
+        s.classList.toggle('selected', parseInt(s.dataset.v) <= currentRating);
+      });
+      document.getElementById('rating-label-text').textContent =
+        currentRating ? STAR_LABELS[currentRating] : 'Seleccioná una puntuación';
+    });
+
+    star.addEventListener('click', () => {
+      currentRating = val;
+      document.querySelectorAll('.star').forEach(s => {
+        const sv = parseInt(s.dataset.v);
+        s.classList.toggle('selected', sv <= val);
+        s.classList.remove('hovered');
+        if (sv <= val) { s.classList.add('pop'); setTimeout(() => s.classList.remove('pop'), 350); }
+      });
+      document.getElementById('rating-label-text').style.color = 'var(--gold)';
+      document.getElementById('rating-label-text').textContent = STAR_LABELS[val];
+      document.getElementById('rating-submit').disabled = false;
+    });
+  });
+
+  function submitRating() {
+    const comment = document.getElementById('rating-comment').value.trim();
+    const newReview = {
+      name: 'Vos',
+      stars: currentRating,
+      text: comment || STAR_LABELS[currentRating]
+    };
+    reviews.push(newReview);
+    buildTicker(reviews);
+
+    // Show thanks
+    document.getElementById('rating-submit').style.display = 'none';
+    document.getElementById('rating-skip').style.display = 'none';
+    document.getElementById('rating-comment').style.display = 'none';
+    document.getElementById('stars-row').style.display = 'none';
+    document.getElementById('rating-sub').textContent = '';
+    document.getElementById('rating-thanks').style.display = 'block';
+    document.getElementById('thanks-stars').textContent = '★'.repeat(currentRating) + '☆'.repeat(5 - currentRating);
+
+    setTimeout(closeRating, 2800);
+  }
+
+</script>
+
+<!-- Rating Modal -->
+<div id="rating-modal">
+  <div id="rating-backdrop"></div>
+  <div id="rating-card">
+    <div id="rating-icon">✂</div>
+    <div id="rating-eyebrow">Big Bosses Barbería</div>
+    <h2 id="rating-title">¿Cómo fue tu experiencia?</h2>
+    <p id="rating-sub">Tu opinión nos ayuda a seguir mejorando</p>
+    <div id="rating-barbero-badge"></div>
+    <div id="stars-row" role="radiogroup" aria-label="Puntuación">
+      <span class="star" data-v="1" role="radio" tabindex="0" aria-label="1 estrella">★</span>
+      <span class="star" data-v="2" role="radio" tabindex="0" aria-label="2 estrellas">★</span>
+      <span class="star" data-v="3" role="radio" tabindex="0" aria-label="3 estrellas">★</span>
+      <span class="star" data-v="4" role="radio" tabindex="0" aria-label="4 estrellas">★</span>
+      <span class="star" data-v="5" role="radio" tabindex="0" aria-label="5 estrellas">★</span>
+    </div>
+    <div id="rating-label-text">Seleccioná una puntuación</div>
+    <textarea id="rating-comment" placeholder="Dejá un comentario (opcional)..."></textarea>
+    <button id="rating-submit" onclick="submitRating()" disabled>Enviar calificación</button>
+    <button id="rating-skip" onclick="closeRating()">Omitir</button>
+    <div id="rating-thanks" style="display:none">
+      <div id="thanks-stars"></div>
+      <div id="thanks-msg">¡Gracias por tu reseña!</div>
+      <div id="thanks-sub">Nos vemos en el próximo turno 💈</div>
+    </div>
+  </div>
+</div>
+
+<!-- Reviews ticker -->
+<div id="reviews-bar">
+  <div id="reviews-track"></div>
+</div>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/543874890666" target="_blank" id="wa-float" title="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.617a.75.75 0 00.921.921l5.773-1.476A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.953-1.355l-.355-.211-3.668.938.957-3.595-.232-.371A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+  </svg>
+</a>
+
+<style>
+#wa-float {
+  position: fixed;
+  bottom: 5.5rem; right: 1.8rem;
+  width: 54px; height: 54px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 390;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+#wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.6);
+}
+#wa-float svg {
+  width: 28px; height: 28px;
+}
+#wa-float::before {
+  content: 'Escribinos';
+  position: absolute;
+  right: 64px;
+  background: #111;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+#wa-float:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+</style>
+
+</body>
+</html>
